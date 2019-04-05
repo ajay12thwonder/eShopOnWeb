@@ -1,4 +1,5 @@
 # eShopOnWeb
+[![Build Status](https://dev.azure.com/ajay12thwonderDevOps/eShopOnWeb/_apis/build/status/ajay12thwonder.eShopOnWeb?branchName=master)](https://dev.azure.com/ajay12thwonderDevOps/eShopOnWeb/_build/latest?definitionId=1&branchName=master)
 
 Sample ASP.NET Core reference application, powered by Microsoft, demonstrating a single-process (monolithic) application architecture and deployment model. 
 
