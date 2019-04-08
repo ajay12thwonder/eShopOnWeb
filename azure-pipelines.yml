@@ -20,7 +20,7 @@ steps:
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
     artifactName: 'drop' 
-    publishLocation: 'filePath' # Options: container, filePath
+    publishLocation: 'Container' # Options: container, filePath
     targetPath: $(Build.ArtifactStagingDirectory) # Required when publishLocation == FilePath
     #parallel: false # Optional
     #parallelCount: # Optional
