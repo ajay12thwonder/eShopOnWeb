@@ -16,4 +16,11 @@ steps:
 - script: |
     dotnet build --configuration $(buildConfiguration)
     dotnet publish --configuration $(buildConfiguration)
- 
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+    artifactName: 'drop' 
+    publishLocation: 'filePath' # Options: container, filePath
+    targetPath: $(Build.ArtifactStagingDirectory) # Required when publishLocation == FilePath
+    #parallel: false # Optional
+    #parallelCount: # Optional
