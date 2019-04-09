@@ -17,9 +17,19 @@ steps:
     dotnet build --configuration $(buildConfiguration)
 
     
-- task: PublishBuildArtifacts@1
+# - task: PublishBuildArtifacts@1
+#   inputs:
+#       ArtifactName: drop
+#       publishLocation: Container
+#       pathtoPublish: '$(Build.ArtifactStagingDirectory)/ci-build'
+#       TargetPath: '$(Build.ArtifactStagingDirectory)'
+
+- task: DotNetCoreCLI@2
   inputs:
-      ArtifactName: drop
-      publishLocation: Container
-      pathtoPublish: '$(Build.ArtifactStagingDirectory)'
-      TargetPath: '$(Build.ArtifactStagingDirectory)'
+    command: publish
+    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    projects: src/Web/Web.csproj
+    publishWebProjects: false
+    modifyOutputPath: true
+    zipAfterPublish: true
+
