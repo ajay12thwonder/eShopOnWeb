@@ -15,7 +15,8 @@ variables:
 steps:
 - script: |
     dotnet build --configuration $(buildConfiguration)
-   
+
+    
 - task: PublishBuildArtifacts@1
   inputs:
       ArtifactName: drop
