@@ -33,3 +33,4 @@ steps:
     modifyOutputPath: true
     zipAfterPublish: true
 
+- task: PublishBuildArtifacts@1
